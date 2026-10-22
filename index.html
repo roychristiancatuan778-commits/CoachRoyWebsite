@@ -256,13 +256,16 @@
     <!-- JavaScript logic -->
     <script>
         function openModal() {
-            document.getElementById('coachingModal').classList.remove('hidden');
-            document.getElementById('coachingModal').classList.add('flex');
-        }
-        function closeModal() {
-            document.getElementById('coachingModal').classList.remove('flex');
-            document.getElementById('coachingModal').classList.add('hidden');
-        }
+    const modal = document.getElementById('coachingModal');
+    modal.classList.remove('hidden', 'pointer-events-none');
+    modal.classList.add('flex', 'pointer-events-auto');
+}
+
+function closeModal() {
+    const modal = document.getElementById('coachingModal');
+    modal.classList.remove('flex', 'pointer-events-auto');
+    modal.classList.add('hidden', 'pointer-events-none');
+}
         function handleFormSubmit(event) {
             event.preventDefault();
             alert('Maraming salamat! Natanggap na ni Coach Roy ang iyong application. Makikipag-ugnayan agad sa iyo.');
